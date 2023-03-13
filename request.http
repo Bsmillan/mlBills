@@ -1,0 +1,83 @@
+###
+POST http://localhost:3060/api/v1/bills HTTP/1.1
+Content-Type: application/json
+
+{
+  "numBill" : 1,
+  "client" : {
+    "typeId" : "Cedula",
+    "numId" : 1053820080,
+    "name" : "Brahiam Steven Millan Arias",
+    "address" : {
+      "description": "Km 7 AU del cafe",
+      "city" : "Manizales",
+      "country" : "Colombia"
+    },
+    "email" : "bsmillan76461@umanizales.edu.co"
+  },
+  "product" : {
+    "sku" : 124,
+    "detail" : "Suscription HBO Max",
+    "amount" : 1,
+    "unitValue" : 9990,
+    "ivaPercent" : 19,
+    "ivaCost" : 1898
+  },
+  "subTotal" : 9990,
+  "ivaTotal" : 1898,
+  "total" : 11888,
+  "observations" : "No aplica",
+  "paymentMethod" : "Credit card",
+  "wayPay" : "Contado"
+}
+
+###
+
+GET http://localhost:3060/api/v1/bills HTTP/1.1
+
+###
+// obtener id
+GET http://localhost:3060/api/v1/bills/640f367ec43da6d08f4358be HTTP/1.1
+
+###
+// Update a specific bill
+PUT http://localhost:3060/api/v1/bills/640f2fab34a3d3c8364bfa2e HTTP/1.1
+Content-Type: application/json
+
+{
+  "numBill" : 1,
+  "client" : {
+    "typeId" : "Cedula",
+    "numId" : 1053820080,
+    "name" : "Marisol",
+    "address" : {
+      "description": "Km 7 AU del cafe",
+      "city" : "Manizales",
+      "country" : "Colombia"
+    },
+    "email" : "bsmillan76461@umanizales.edu.co"
+  },
+  "product" : {
+    "sku" : 124,
+    "detail" : "Suscription HBO Max",
+    "amount" : 1,
+    "unitValue" : 9990,
+    "ivaPercent" : 19,
+    "ivaCost" : 1898
+  },
+  "subTotal" : 9990,
+  "ivaTotal" : 1898,
+  "total" : 11888,
+  "observations" : "No aplica",
+  "paymentMethod" : "Credit card",
+  "wayPay" : "Credito"
+}
+
+###
+//delete id
+DELETE http://localhost:3060/api/v1/bills/640f2fd034a3d3c8364bfa30 HTTP/1.1
+
+###
+//delete many
+DELETE http://localhost:3060/api/v1/bills HTTP/1.1
+
